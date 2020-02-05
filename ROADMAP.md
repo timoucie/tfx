@@ -33,6 +33,7 @@ efforts building a model to the final touches of deploying in production.
 [Kubeflow](https://www.kubeflow.org/),
 [Tensorboard](https://www.tensorflow.org/guide/summaries_and_tensorboard), and
 [TensorFlow 2.0](https://www.tensorflow.org/versions/r2.0/api_docs/).
+*   Extend support for more ML frameworks, i.e, XGBoost and scikit learning.
 *   Extend portability across additional cluster computing frameworks,
 orchestrators, and data representations.
 
@@ -43,23 +44,20 @@ orchestrators, and data representations.
 TFX pipeline.
 
 ##### Usability
-*   Support of TensorFlow 2.0 in two phases:
-    1.  The first phase will provide the following:
-        Existing TFX pipelines can continue to use TensorFlow 1.X. To switch to
-        TensorFlow 2.X, see the [TensorFlow migration guide](
-        https://www.tensorflow.org/guide/migrate).
-        New TFX pipelines should use Keras (via
-        `tf.keras.estimator.model_to_estimator()`) and TensorFlow 2.X.
-    1.  The second phase will enable the remainder of TensorFlow 2.X
-        functionality, including tf.distribute and Keras without Estimator.
-*   Integration with TensorBoard and TF Hub/AI Hub.
+*   Complete the support for tensorflow 2.x functionaties, including
+    tf.distribute and Keras without Estimator.
 *   Improving the testing capabilities for OSS developers.
-*   Increased interoperability with Kubeflow Pipelines.
-*   Support for training on continuously arriving data.
+*   Increased interoperability with Kubeflow Pipelines, with a focus on
+    providing more flexbilities from unified DSL and converging on pipeline
+    presentation and orchestration semantics.
+*   Support for training on continuously arriving data and more advanced
+    orchestration semantics.
 
 ##### Education
 *   More pipeline code examples, including DIY orchestrators and custom
 components.
+*   Work with [ML Metadata](https://www.tensorflow.org/tfx/guide/mlmd) to
+    publish standard ontology types and show case them through TFX OSS.
 
 ##### Innovation and collaboration
 *   Formalize Special Interest Groups (SIGs) for specific aspects of TFX to
@@ -67,6 +65,10 @@ accelerate community innovation and collaboration.
 *   Early access to new features.
 
 #### History
+*   Q1 2020: New ComponentSpec and standard artifact types published.
+*   Q1 2020: Allow pipelines to be parameterized with `RuntimeParameters`.
+*   Q1 2020: Enabled warming starting for estimator based trainers.
+*   Q4 2019: Added limited support for TF.Keras through `tf.keras.estimator.model_to_estimator()`.
 *   Q3 2019: Support for local orchestrator through Apache Beam.
 *   Q3 2019: Experimental support for interactive development on Jupyter notebook.
 *   Q3 2019: Experimental support for TFX CLI released.
